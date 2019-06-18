@@ -18,7 +18,7 @@ router.get('/:listId', (req, res) => {
   const {DEMO, PORT, LOCAL} = process.env;
   const reqId = req.params.listId;
   const socketAddress = (DEMO && LOCAL) ?
-    `http://${hostname}:${PORT}` : `wss://${hostname}`;
+    `https://${hostname}:${PORT}` : `wss://${hostname}`;
 
   if (reqId === 'new') {
     Lists.create().then(({id}) => {
